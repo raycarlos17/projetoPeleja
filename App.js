@@ -4,13 +4,11 @@ const express = require('express')
 
 const app = express();
 
-const rotasPessoas = require('./routes/rotasTbl_Pessoas')
-const rotaLogin = require('./routes/rotaLogin')
+const rotasPessoas = require('./routes/rotasPessoas')
 
 app.use(bodyParser.json())
 
 app.use ('/', rotasPessoas)
-app.use ('/', rotaLogin)
 
 const server = http.createServer(app)
 

@@ -1,4 +1,4 @@
-const funcoesTbl_Ocorrencias = require('../funcoesBancoDeDados/funcoesTbl_Ocorencias')
+const funcoesTbl_Ocorrencias = require('../funcoesBancoDeDados/funcoesOcorencias')
 
 async function cadastrarOcorrencia(req, res, next){
     
