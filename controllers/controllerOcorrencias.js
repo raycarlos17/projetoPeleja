@@ -10,4 +10,4 @@ async function enviaRespostaOcorrencia(req, res, next) {
 
 
 
-module.exports = { enviaRespostaOcorrencia}
+module.exports = { enviaRespostaOcorrencia }

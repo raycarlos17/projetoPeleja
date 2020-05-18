@@ -26,7 +26,7 @@ async function realizaLoginPessoa(req, res, next) {
                 if (resultado.length > 0) {
 
                     for (let linhas of resultado) {
-                      
+
                         let verificaHash = await bcrypt.compare(req.body.senha, linhas.senha)
 
                         if (verificaHash == true) {
@@ -46,9 +46,9 @@ async function realizaLoginPessoa(req, res, next) {
 
     }
     catch{
-        res.status(404).json({"Message" : "Erro na busca do usuario"})
+        res.status(404).json({ "Message": "Erro na busca do usuario" })
     }
-    
+
 }
 
 

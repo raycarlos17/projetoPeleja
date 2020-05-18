@@ -12,7 +12,7 @@ router.post('/projeto-peleja/pessoa/cadastro',
 router.post('/projeto-peleja/login',
     pessoa.realizaLoginPessoa,
     controllerPessoas.enviaRespostaLogin
-    
+
 )
 
 module.exports = router

@@ -9,11 +9,11 @@ const rotasOcorrencias = require('./routes/rotasOcorrencias')
 
 app.use(bodyParser.json())
 
-app.use ('/', rotasPessoas)
-app.use ('/', rotasOcorrencias)
+app.use('/', rotasPessoas)
+app.use('/', rotasOcorrencias)
 
 const server = http.createServer(app)
 
-server.listen(8080, async function(){
+server.listen(8080, async function () {
     console.log('listening port ' + 8080)
 })

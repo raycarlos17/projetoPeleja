@@ -25,7 +25,7 @@ async function cadastrarOcorrencia(req, res, next) {
             res.status(404).json({ "Message": "Erro ao fazer ocorrencia" })
         }
     }
-    else if(resultadoEmail == undefined){
+    else if (resultadoEmail == undefined) {
         res.status(404).json({ "Message": "Erro ao localizar email do usuario" })
     }
 
