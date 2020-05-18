@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const cadastrarOcorrencia = require('../middlewares/ocorrencias')
+const ocorrencias = require('../middlewares/ocorrencias')
+const controllerOcorrencia = require('../controllers/controllerOcorrencias')
 
 router.post('/projeto-peleja/registro/ocorrencia',
-    cadastrarOcorrencia.registrarOcorrencia
+    ocorrencias.cadastrarOcorrencia,
+    controllerOcorrencia.enviaRespostaOcorrencia
 )
 
 module.exports = router

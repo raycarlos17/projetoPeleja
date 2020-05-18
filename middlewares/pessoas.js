@@ -6,7 +6,7 @@ async function cadastrarPessoa(req, res, next) {
     const hash = await bcrypt.hash(req.body.senha, 10)
 
     try {
-        funcoesPessoas.inserirPessoa(req.body.email, req.body.nome, hash, req.body.cpf)
+        funcoesPessoas.inserirPessoa(req.body.email, req.body.nome, hash, req.body.cpf, req.body.telefone)
         req.body['status_insert_pessoa'] = 'Sucesso'
 
     }

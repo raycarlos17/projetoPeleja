@@ -5,10 +5,12 @@ const express = require('express')
 const app = express();
 
 const rotasPessoas = require('./routes/rotasPessoas')
+const rotasOcorrencias = require('./routes/rotasOcorrencias')
 
 app.use(bodyParser.json())
 
 app.use ('/', rotasPessoas)
+app.use ('/', rotasOcorrencias)
 
 const server = http.createServer(app)
 

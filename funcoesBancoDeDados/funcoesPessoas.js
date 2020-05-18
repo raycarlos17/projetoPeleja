@@ -1,10 +1,10 @@
 const conexao = require('../database/postgreslq')
 
-async function inserirPessoa(email, nome, senha, cpf) {
+async function inserirPessoa(email, nome, senha, cpf, telefone) {
 
     const insertQuery = {
-        text: 'INSERT INTO tbl_pessoas( email, nome, senha, cpf) VALUES($1, $2, $3, $4) RETURNING id_pessoa',
-        values: [email, nome, senha, cpf],
+        text: 'INSERT INTO tbl_pessoas( email, nome, senha, cpf, telefone) VALUES($1, $2, $3, $4, $5) RETURNING id_pessoa',
+        values: [email, nome, senha, cpf, telefone],
     }
     console.log(insertQuery)
 
