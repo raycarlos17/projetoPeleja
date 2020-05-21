@@ -7,8 +7,8 @@ async function cadastrarOcorrencia(req, res, next) {
 
     let horaProtocol = moment().format('HHmmss')
     let dataProtocol = moment().format('DDMMYYYY')
-    let numeroProtocol = Math.floor(Math.random() * 10000)
-    let protocoloOcorrencia = (dataProtocol + horaProtocol + numeroProtocol)
+    let idProtocol =  await funcoesOcorrencias.consultarId(req.body.email)
+    let protocoloOcorrencia = (dataProtocol + horaProtocol + idProtocol)
 
     let resultadoEmail = await funcoesOcorrencias.consultarEmail(req.body.email)
 

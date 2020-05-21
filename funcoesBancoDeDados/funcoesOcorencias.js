@@ -38,4 +38,23 @@ async function consultarEmail(email) {
 
 }
 
-module.exports = { cadastrarOcorrencia, consultarEmail }
+async function consultarId(email) {
+    try {
+        const selectQuery = {
+            text: 'SELECT * FROM tbl_pessoas where email = $1',
+            values: [email],
+        }
+        let client = await conexao.pool.connect();
+        let resultado = await client.query(selectQuery);
+
+        client.release();
+
+        return resultado.rows[0].id_pessoa
+    }
+    catch {
+        return undefined
+    }
+
+}
+
+module.exports = { cadastrarOcorrencia, consultarEmail, consultarId }
