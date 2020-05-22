@@ -9,4 +9,9 @@ router.post('/projeto-peleja/registro/ocorrencia',
     controllerOcorrencia.enviaRespostaOcorrencia
 )
 
+router.get('/projeto-peleja/consulta/ocorrencia/:consulta',
+    ocorrencias.consultarOcorrencia,
+    controllerOcorrencia.enviaRespostaConsulta
+)
+
 module.exports = router

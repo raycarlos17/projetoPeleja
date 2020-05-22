@@ -32,4 +32,17 @@ async function cadastrarOcorrencia(req, res, next) {
     next()
 }
 
-module.exports = { cadastrarOcorrencia }
+async function consultarOcorrencia(req, res, next) {
+    const parametroConsulta = req.params.consulta;
+
+    try {
+        let resultado = await funcoesOcorrencias.consultarOcorrencia(parametroConsulta)
+        req['resultado_consulta_ocorrencia'] = resultado;
+    }
+    catch (error) {
+        res.send({ "Message": "Erro na consulta da ocorrencia" })
+    }
+    next()
+}
+
+module.exports = { cadastrarOcorrencia, consultarOcorrencia }

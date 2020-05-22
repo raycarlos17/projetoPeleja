@@ -57,4 +57,17 @@ async function consultarId(email) {
 
 }
 
-module.exports = { cadastrarOcorrencia, consultarEmail, consultarId }
+async function consultarOcorrencia(consulta) {
+    const selectQuery = {
+        text: `SELECT  *, similarity('consulta', $1) from tbl_ocorrencias`,
+        values: [consulta],
+    }
+    let client = await conexao.pool.connect();
+    let resultado = await client.query(selectQuery);
+
+    client.release();
+
+    return resultado.rows
+}
+
+module.exports = { cadastrarOcorrencia, consultarEmail, consultarId, consultarOcorrencia }
