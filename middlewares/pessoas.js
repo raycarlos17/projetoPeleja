@@ -1,6 +1,7 @@
 const funcoesPessoas = require('../funcoesBancoDeDados/funcoesPessoas')
 const bcrypt = require('bcrypt');
 const validaCpf = require ('@fnando/cpf') 
+const jwt = require('jsonwebtoken')
 
 async function cadastrarPessoa(req, res, next) {
     
@@ -38,6 +39,8 @@ async function realizaLoginPessoa(req, res, next) {
                         if (verificaHash == true) {
                             req.body['status_login'] = true
                             res.send({ "Message": "Logado com sucesso" })
+                            let token = await jwt.sign({ foo: 'bar' }, 'shhhhh')
+                            req.body['token'] = token;
                         }
                         else {
                             res.send({ "Message": "Senha incorreta ou usuario incorretos" })

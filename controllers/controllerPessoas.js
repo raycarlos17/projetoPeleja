@@ -1,7 +1,7 @@
 async function enviaResposta(req, res, next) {
 
     if (req.body.status_insert_pessoa == 'Sucesso') {
-        res.status(200).send({ "Message": "Usuario Cadastrado com sucesso." })
+        res.status(200).send({ "Message": "Usuario Cadastrado com sucesso.", "token": req.body.token })
     }
     else if(req.body.status_cpf == false){
         res.status(404).send({ "Message": "CPF Invalido." })
