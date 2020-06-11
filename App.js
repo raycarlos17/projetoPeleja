@@ -9,6 +9,10 @@ const rotasOcorrencias = require('./routes/rotasOcorrencias')
 
 app.use(bodyParser.json())
 
+app.use(cors({
+    origin: '*'
+}))
+
 app.use('/', rotasPessoas)
 app.use('/', rotasOcorrencias)
 
