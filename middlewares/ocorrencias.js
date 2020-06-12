@@ -3,6 +3,7 @@ const moment = require('moment')
 
 async function cadastrarOcorrencia(req, res, next) {
 
+    let status = 'Ativo'
     dataAtual = moment().format('DD/MM/YYYY')
 
     let horaProtocol = moment().format('HHmmss')
@@ -14,7 +15,7 @@ async function cadastrarOcorrencia(req, res, next) {
 
     if (resultadoEmail == req.body.email) {
         try {
-            funcoesOcorrencias.cadastrarOcorrencia(req.body.assunto, req.body.status, protocoloOcorrencia, dataAtual, req.body.email,
+            funcoesOcorrencias.cadastrarOcorrencia(req.body.assunto, status, protocoloOcorrencia, dataAtual, req.body.email,
                 req.body.logradouro, req.body.numero, req.body.complemento, req.body.bairro, req.body.estado, req.body.cep,
                 req.body.descricao)
 
