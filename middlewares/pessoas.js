@@ -16,9 +16,11 @@ async function cadastrarPessoa(req, res, next) {
     }
     catch (error) {
         res.status(404).json({ "Message": "Erro ao realizar cadastro!" })
+
     }}
     else{
         res.status(404).json({ "Message": "CPF Invalido!" })
+    
     }
 
     next()

@@ -1,7 +1,7 @@
 async function enviaResposta(req, res, next) {
 
     if (req.body.status_insert_pessoa == 'Sucesso') {
-        res.status(200).send({ "Message": "Usuario Cadastrado com sucesso.", "token": req.body.token })
+        res.status(200).send({ "Message": "Usuario Cadastrado com sucesso." })
     }
     else if(req.body.status_cpf == false){
         res.status(404).send({ "Message": "CPF Invalido." })
@@ -14,7 +14,7 @@ async function enviaResposta(req, res, next) {
 async function enviaRespostaLogin(req, res, next) {
 
     if (req.body.status_login == true) {
-        res.status(200).send({ "Message": "logado com sucesso." })
+        res.status(200).send({ "Message": "logado com sucesso.", "token": req.body.token })
     }
     else {
         res.status(404).send({ "Message": "Problema no cadastro do usuário." })
